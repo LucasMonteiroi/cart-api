@@ -1,5 +1,5 @@
-☐ Montar estrutura
-☐ Montar Dockerfile
+✔ Montar estrutura @done (26/12/2021 10:54:46)
+✔ Montar Dockerfile @done (26/12/2021 10:54:52)
 ☐ Montar Docker Compose
 ☐ Modelo de Produto
 ☐ Modelo de Carrinho
