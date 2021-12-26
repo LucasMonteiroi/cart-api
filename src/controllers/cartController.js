@@ -44,10 +44,22 @@ class CartController {
     return res.json(cart);
   }
 
+  async removeProduct(req, res) {
+    const { id: cartId, barcode: product } = req.params;
+    const cart = await cartService.removerProductFromCart(cartId, product);
+    return res.json(cart);
+  }
+
   async addDiscountCoupon(req, res) {
     const cartId = req.params.id;
     const coupon = req.body;
     const cart = await cartService.applyDiscountCoupon(cartId, coupon);
+    return res.json(cart);
+  }
+
+  async clearCart(req, res) {
+    const cartId = req.params.id;
+    const cart = await cartService.clearCart(cartId);
     return res.json(cart);
   }
 }

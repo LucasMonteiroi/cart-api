@@ -63,12 +63,40 @@ class CartService {
 
     if (!existsProduct) {
       storedCart.document.products.push(product);
+    } else {
+      existsProduct.quantity = product.quantity;
     }
-
-    existsProduct.quantity = product.quantity;
 
     const updatedCart = await this.update(cart, storedCart.document);
 
+    return updatedCart;
+  }
+
+  async removerProductFromCart(cart, product) {
+    if (!product) {
+      throw new Error('Products is required');
+    }
+
+    const storedCart = await this.findById(cart);
+
+    if (!storedCart) {
+      throw new Error('Cart is invalid, please enter a valid cart');
+    }
+
+    const existsProduct = storedCart.document.products.find(
+      (item) => item.barcode === product
+    );
+
+    if (!existsProduct) {
+      throw new Error(`Products doesn't exists`);
+    }
+
+    const productIndex = storedCart.document.products.indexOf(existsProduct);
+    if (productIndex > -1) {
+      storedCart.document.products.splice(productIndex, 1);
+    }
+
+    const updatedCart = await this.update(cart, storedCart.document);
     return updatedCart;
   }
 
@@ -131,6 +159,23 @@ class CartService {
     }
 
     return cart;
+  }
+
+  async clearCart(cart) {
+    const storedCart = await this.findById(cart);
+
+    if (!storedCart) {
+      throw new Error('Cart is invalid, please enter a valid cart');
+    }
+
+    storedCart.document.total = 0;
+    storedCart.document.subtotal = 0;
+    storedCart.document.discountApplied = 0;
+    storedCart.document.discountCoupon = '';
+    storedCart.document.products = [];
+
+    const updatedCart = await this.update(cart, storedCart.document);
+    return updatedCart;
   }
 }
 

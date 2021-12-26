@@ -4,13 +4,13 @@
 ✔ Modelo de Carrinho @done (26/12/2021 11:42:47)
 ✔ Modelo de Cupom de desconto @done (26/12/2021 11:15:07)
 ✔ Criar regras de negócios para Produto @done (12/26/2021, 7:32:32 PM)
-☐ Criar regras de negócios para Carrinho
+✔ Criar regras de negócios para Carrinho @done (12/26/2021, 8:53:09 PM)
 ✔ Criar regras de negócios para Cupom de desconto @done (12/26/2021, 7:32:33 PM)ß
 ✔ Montar Docker Compose @done (26/12/2021 13:58:44)
 ✔ Adicionar item no carrinho @done (12/26/2021, 7:34:42 PM)
-☐ Remover um item do carrinho
+✔ Remover um item do carrinho @done (12/26/2021, 8:47:31 PM)
 ✔ Atualizar a quantidade de um item no carrinho @done (12/26/2021, 7:34:44 PM)
-☐ Limpar o carrinho
+✔ Limpar o carrinho @done (12/26/2021, 8:53:05 PM)
 ✔ Adicionar um cupom de desconto ao carrrinho @done (12/26/2021, 8:08:33 PM)
 ✔ Gerar totais e subtotais @done (12/26/2021, 8:08:35 PM)
 ✔ Persistir o carrinho @done (12/26/2021, 7:35:27 PM)
