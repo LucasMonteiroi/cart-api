@@ -2,11 +2,11 @@ const MongodbAdapter = require('../adapters/mongodbAdapter');
 const discountCouponSchema = require('../models/discountCoupon');
 
 class DiscountCouponService {
-  async createDiscountCoupon(discountCoupon) {
+  async create(discountCoupon) {
     return await MongodbAdapter.create(discountCouponSchema, discountCoupon);
   }
 
-  async updateDiscountCoupon(discountCouponId, payload) {
+  async update(discountCouponId, payload) {
     return await MongodbAdapter.updateById(
       discountCouponSchema,
       discountCouponId,

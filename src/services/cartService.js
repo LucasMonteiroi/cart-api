@@ -2,11 +2,11 @@ const MongodbAdapter = require('../adapters/mongodbAdapter');
 const cartSchema = require('../models/cart');
 
 class CartService {
-  async createCart(cart) {
+  async create(cart) {
     return await MongodbAdapter.create(cartSchema, cart);
   }
 
-  async updateCart(cartId, payload) {
+  async update(cartId, payload) {
     return await MongodbAdapter.updateById(cartSchema, cartId, payload);
   }
 

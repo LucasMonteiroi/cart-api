@@ -2,11 +2,11 @@ const MongodbAdapter = require('../adapters/mongodbAdapter');
 const productSchema = require('../models/product');
 
 class ProductService {
-  async createProduct(product) {
+  async create(product) {
     return await MongodbAdapter.create(productSchema, product);
   }
 
-  async updateProduct(productId, payload) {
+  async update(productId, payload) {
     return await MongodbAdapter.updateById(productSchema, productId, payload);
   }
 
