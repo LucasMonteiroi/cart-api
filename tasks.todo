@@ -1,11 +1,11 @@
 ✔ Montar estrutura @done (26/12/2021 10:54:46)
 ✔ Montar Dockerfile @done (26/12/2021 10:54:52)
-☐ Montar Docker Compose
-☐ Modelo de Produto
-☐ Modelo de Carrinho
-☐ Modelo de Cupom de desconto
+✔ Modelo de Produto @done (26/12/2021 11:06:16)
+✔ Modelo de Carrinho @done (26/12/2021 11:42:47)
+✔ Modelo de Cupom de desconto @done (26/12/2021 11:15:07)
 ☐ Criar regras de negócios para Produto
 ☐ Criar regras de negócios para Carrinho
 ☐ Criar regras de negócios para Cupom de desconto
+☐ Montar Docker Compose
 ☐ Criar Insominia link e/ou Hoppscotch
 ☐ Criar ReadMe
