@@ -9,15 +9,12 @@ const cartSchema = new Schema({
   products: [
     {
       quantity: Number,
-      lineItem: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'Product',
-      },
+      barcode: { type: String },
+      value: Number,
     },
   ],
   discountCoupon: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: 'DiscountCoupon',
+    type: String,
   },
   total: {
     type: Number,
