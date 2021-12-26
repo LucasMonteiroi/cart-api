@@ -1,0 +1,8 @@
+{
+  "name": "cart-api",
+  "version": "1.0.0",
+  "description": "shopping cart API",
+  "main": "index.js",
+  "author": "Lucas Monteiro Inacio",
+  "license": "MIT"
+}
