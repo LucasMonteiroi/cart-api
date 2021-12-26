@@ -19,7 +19,7 @@ class MongoAdapter {
   }
 
   setSchema({ data }) {
-    const { _id, deleted, _doc } = data;
+    const { _id, _doc } = data;
 
     return {
       document: _doc,
