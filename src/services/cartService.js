@@ -1,8 +1,12 @@
+/* eslint-disable no-param-reassign */
 const MongodbAdapter = require('../adapters/mongodbAdapter');
 const cartSchema = require('../models/cart');
 
 class CartService {
   async create(cart) {
+    cart.total = 0;
+    cart.subtotal = 0;
+    cart.discountApplied = 0;
     return await MongodbAdapter.create(cartSchema, cart);
   }
 

@@ -14,7 +14,7 @@ class CartController {
   }
 
   async find(req, res) {
-    const carts = await cartService.find();
+    const carts = await cartService.findAll();
     return res.json(carts);
   }
 
@@ -26,8 +26,8 @@ class CartController {
 
   async delete(req, res) {
     const cartId = req.params.id;
-    await cartService.deleteById(cartId);
-    return res.status(204);
+    const deleted = await cartService.deleteById(cartId);
+    return res.json({ isDeleted: deleted });
   }
 }
 
