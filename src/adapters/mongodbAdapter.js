@@ -19,45 +19,39 @@ class MongoAdapter {
   }
 
   setSchema({ data }) {
-    const { _id, deleted, ...entity } = data;
+    const { _id, deleted, _doc } = data;
 
     return {
-      ...entity,
-      id: _id.toString(),
+      document: _doc,
+      id: _id,
     };
   }
 
   async create(model, payload) {
-    const data = {
-      ...payload,
-      deleted: false,
-    };
+    const created = await model.create(payload);
 
-    await model.create(data);
-
-    return this.formatResponse({ data });
+    return this.formatResponse({ response: created });
   }
 
   async deleteById(model, _id) {
-    await this.updateById(model, _id, {
-      deleted: true,
-    });
+    const data = await model.deleteOne({ _id });
+    return !!data;
   }
 
   async find(model) {
     const documents = await model.find();
 
-    return this.formatResponse({ data: documents });
+    return this.formatResponse({ response: documents });
   }
 
   async findFilter(model, filter) {
     const data = await model.find(filter).toArray();
-    return this.formatResponse({ data });
+    return this.formatResponse({ response: data });
   }
 
   async findById(model, _id) {
     const document = await model.findOne({ _id });
-    return this.formatResponse({ data: document });
+    return this.formatResponse({ response: document });
   }
 
   async updateById(model, _id, payload) {
