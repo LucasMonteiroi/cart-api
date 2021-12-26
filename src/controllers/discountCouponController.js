@@ -19,7 +19,7 @@ class DiscountCouponController {
   }
 
   async find(req, res) {
-    const discountCoupons = await discountCouponService.find();
+    const discountCoupons = await discountCouponService.findAll();
     return res.json(discountCoupons);
   }
 
@@ -33,8 +33,8 @@ class DiscountCouponController {
 
   async delete(req, res) {
     const discountCouponId = req.params.id;
-    await discountCouponService.deleteById(discountCouponId);
-    return res.status(204);
+    const deleted = await discountCouponService.deleteById(discountCouponId);
+    return res.json({ isDeleted: deleted });
   }
 }
 

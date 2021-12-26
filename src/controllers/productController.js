@@ -14,7 +14,7 @@ class ProductController {
   }
 
   async find(req, res) {
-    const products = await productService.find();
+    const products = await productService.findAll();
     return res.json(products);
   }
 
@@ -26,8 +26,8 @@ class ProductController {
 
   async delete(req, res) {
     const productId = req.params.id;
-    await productService.deleteById(productId);
-    return res.status(204);
+    const deleted = await productService.deleteById(productId);
+    return res.json({ isDeleted: deleted });
   }
 }
 
