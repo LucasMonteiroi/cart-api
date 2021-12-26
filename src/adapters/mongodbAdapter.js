@@ -45,7 +45,7 @@ class MongoAdapter {
   }
 
   async findFilter(model, filter) {
-    const data = await model.find(filter).toArray();
+    const data = await model.find(filter);
     return this.formatResponse({ response: data });
   }
 
