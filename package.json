@@ -1,18 +1,21 @@
 {
-  "name": "cart-api",
-  "version": "1.0.0",
-  "description": "shopping cart API",
-  "main": "index.js",
-  "author": "Lucas Monteiro Inacio",
-  "license": "MIT",
-  "devDependencies": {
-    "eslint": "^7.32.0",
-    "eslint-config-airbnb-base": "^15.0.0",
-    "eslint-config-prettier": "^8.3.0",
-    "eslint-plugin-import": "^2.25.3",
-    "eslint-plugin-prettier": "^4.0.0",
-    "prettier": "^2.5.1"
-  },
-  "dependencies": {    
-  }
+    "name": "cart-api",
+    "version": "1.0.0",
+    "description": "shopping cart API",
+    "main": "index.js",
+    "author": "Lucas Monteiro Inacio",
+    "license": "MIT",
+    "scripts": {
+        "test": "jest"
+    },
+    "devDependencies": {
+        "eslint": "^7.32.0",
+        "eslint-config-airbnb-base": "^15.0.0",
+        "eslint-config-prettier": "^8.3.0",
+        "eslint-plugin-import": "^2.25.3",
+        "eslint-plugin-prettier": "^4.0.0",
+        "jest": "^27.4.5",
+        "prettier": "^2.5.1"
+    },
+    "dependencies": {}
 }
