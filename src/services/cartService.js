@@ -62,9 +62,11 @@ class CartService {
     );
 
     if (!existsProduct) {
+      product.value = result[0].document.value;
       storedCart.document.products.push(product);
     } else {
       existsProduct.quantity = product.quantity;
+      existsProduct.value = result[0].document.value;
     }
 
     const updatedCart = await this.update(cart, storedCart.document);
