@@ -1,4 +1,5 @@
 const productService = require('../services/productService');
+const { NotFoundError } = require('../utils/errors')
 
 class ProductController {
   async create(req, res) {
@@ -8,8 +9,10 @@ class ProductController {
   }
 
   async update(req, res) {
+    const { id } = req.params;
     const product = req.body;
-    const updatedProduct = await productService.update(product.id, product);
+    const updatedProduct = await productService.update(id, product);
+    if (!updatedProduct) throw new NotFoundError("Product doesn't exists.")
     return res.json(updatedProduct);
   }
 

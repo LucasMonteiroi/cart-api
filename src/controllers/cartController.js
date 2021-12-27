@@ -1,4 +1,5 @@
 const cartService = require('../services/cartService');
+const { NotFoundError } = require('../utils/errors')
 
 class CartController {
   async create(req, res) {
@@ -33,6 +34,9 @@ class CartController {
   async sumCart(req, res) {
     const cartId = req.params.id;
     let cart = await cartService.findById(cartId);
+    
+    if (!cart) throw new NotFoundError("Cart doesn't exists.")
+
     cart = await cartService.generateTotals(cart.document);
     return res.json(cart);
   }
